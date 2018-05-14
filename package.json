@@ -1,0 +1,29 @@
+{
+  "name": "alacritylaw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./node_modules/.bin/mocha --reporter spec",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "node-restify-validation": "^1.1.1",
+    "randomstring": "^1.1.5",
+    "redis": "^2.8.0",
+    "restify": "^4.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "should": "^13.2.1",
+    "supertest": "^3.1.0"
+  }
+}
