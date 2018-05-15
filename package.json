@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon ./node_modules/.bin/mocha --reporter spec",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "start_HA": "pm2 start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^5.0.1",
     "node-restify-validation": "^1.1.1",
+    "pm2": "^2.10.3",
     "randomstring": "^1.1.5",
     "redis": "^2.8.0",
     "restify": "^4.3.3"

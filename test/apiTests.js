@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config({ path: 'process.env' });
 
 }
-const serverUrl = "http://localhost:3000";
+const serverUrl = "http://" + process.env.WEB_HOST + ":" + process.env.PORT;
 
 console.log("Testing on url  " + serverUrl);
 // This agent refers to PORT where program is runninng.

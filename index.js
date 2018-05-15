@@ -137,5 +137,5 @@ if (process.env.ENVIRONMENT == "DEV") {
 }
 
 server.listen(process.env.PORT, function () {
-    console.log('%s listening at %s', server.name, server.url);
+    console.log('%s listening at %s', process.env.WEB_HOST, process.env.PORT);
 });

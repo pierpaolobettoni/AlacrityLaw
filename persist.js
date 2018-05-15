@@ -1,11 +1,16 @@
 const { promisify } = require('util');
-console.log("Connecting to redis at url: " + process.env.REDIS_ENDPOINT)
+if (process.env.NODE_ENV !== 'production') {
+    //console.log("Loading Env File");
+    require('dotenv').config({ path: 'process.env' });
+
+}
+console.log("Connecting to redis at url: " + process.env.REDIS_HOST + ":" + process.env.REDIS_PORT)
 var redis = require("redis"),
     client = redis.createClient(
-        //     {
-        //         host: process.env.REDIS_HOST,
-        //         port: process.env.REDIS_PORT
-        //     }
+        {
+            host: process.env.REDIS_HOST,
+            port: process.env.REDIS_PORT
+        }
     );
 //client.auth(process.env.REDIS_PASSWORD);
 client.on("redis error", function (err) {
