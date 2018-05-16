@@ -4,7 +4,11 @@ Simple NodeJS project to demonstrate a few concepts around services and encrypti
 ## Run it
 A couple of options
 
-- To run the complete dockerized version: `sh run.sh` (first time requires a bit of wait)
+- To run the complete dockerized version: `sh run.sh` The first run is downloading assets and might require a bit of a wait. 
+It's ready when you see the following on screen:
+
+    `web_1    | localhost listening at 3000`
+
 - To run on your localhost: 'npm start' (requires redis running on localhost)
 
 ## Encryption 
