@@ -1,2 +1,2 @@
-docker-compose build alaw
+docker-compose build
 docker-compose up
