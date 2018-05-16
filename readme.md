@@ -13,7 +13,7 @@ NodeJS project with a few goals:
 It is done using an Initiation Vector so that even when encoding the same value twice, the cipher is never the same and is much much harder to reverse engineer should an attacker get a hold of the database.
 
 ## Testing 
-Mocha + Chai scripts ensure things are working both during development and in staging. Using `npm test` during dev keeps running tests every time some file changes.
+Mocha + Chai scripts ensure things are working both during development and in staging. Run `npm test` during dev keeps running tests every time some file changes.
 
 ## Simple Deploy
 App can run it locally with `npm start` (you need to have redis running unsecurely on localhost) or via docker via `sh run.sh` (docker sets up everything for you, and after that you'll be able to access the api on http://localhost:3000).
