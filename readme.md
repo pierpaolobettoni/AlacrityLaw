@@ -32,5 +32,4 @@ Quick Dev: `npm start` keeps the server running as you change files, and `npm te
 ## Whats missing?
 Lots of things :-)
 
-- Logging, Authentication / Authorization, Solid HA
 
