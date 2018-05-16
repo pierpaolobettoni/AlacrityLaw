@@ -1,35 +1,32 @@
 # Encrypt Example
+Simple NodeJS project to demonstrate a few concepts around services and encryption.
 
+## Run it
+A couple of options
 
-NodeJS project with a few goals:
-
-- encrypting/decrypting text using a client provided key
-- testing
-- simple deploy 
-- HA
-- Good Dev experience
+- To run the complete dockerized version: `sh run.sh` (first time requires a bit of wait)
+- To run on your localhost: 'npm start' (requires redis running on localhost)
 
 ## Encryption 
-It is done using an Initiation Vector so that even when encoding the same value twice, the cipher is never the same and is much much harder to reverse engineer should an attacker get a hold of the database.
+It is done using an Initiation Vector together with the user-provided key. 
+
+Text is stored in encrypted version, while both ID and IV are stored in clear. User key is not stored anywhere.
 
 ## Testing 
-Mocha + Chai scripts ensure things are working both during development and in staging. Run `npm test` during dev run tests for you every time some file changes.
-
-## Simple Deploy
- - One-line docker install: `sh run.sh` Docker sets up everything for you, and after that you'll be able to access the api on http://localhost:3000.
-  - Execute node directly on your localhost: run `npm start` NOTE: you need to already have redis running unsecurely on localhost 
-
+Mocha + Chai scripts ensure things are working both during development and in staging
 
 ## High Availability
-Node server is written in a completely stateless way, so that it can be made HA by spawning multiple process. In this example we use PM2 to fire up N processes. Should one of the processes crash, PM2 will immediately instantiate a second one.
+A simple HA strategy is used. The core concept is that the app is completely stateless, which gives you all sort of options on how to implement HA. Right now PM2 is used to fire up 2 processes and make sure that there are always 2 running (should one crash, PM2 would fire up another one).
 
-Redis DB is the single point of failure right now. It could be fixed by running a master/slave or cluster redis node.
+Redis DB is the single point of failure right now. It could be fixed by running a master/slave or cluster redis node. (Beyond the scope of this excercize)
 
-## Dev Setup
-Quick Dev: `npm start` keeps the server running as you change files, and `npm test` keeps running tests against it
+## Working on it
+If you are working on the code, open 2 terminals and run:
+
+-  `npm start`: runs the server and reloads it every time a file changes
+-  `npm test`: runs all tests every time a file changes 
 
 
 ## Whats missing?
-Lots of things :-)
-
+Lots of things :-)  this is just a starting point
 
